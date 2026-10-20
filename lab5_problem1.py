@@ -3,8 +3,8 @@
 # Cuyahoga Community College
 # Lab 5 – Problem 1
 # ==================================================
-# Student Name: YOUR_NAME_HERE
-# Student Email: YOUR_EMAIL_HERE
+# Student Name: Kyle Quiros
+# Student Email: S01026892@acad.tri-c.edu
 # ==================================================
 
 def main():  # DO NOT EDIT THIS LINE
@@ -13,48 +13,58 @@ def main():  # DO NOT EDIT THIS LINE
 
     # PART A
     # ======
-    # Create two variables, string1 and string2. The variable string1 should read
-    # ABCDEFG and string2 should read TUVWXYZ. Print each variable to the screen
-    # using individual print statements
+    string1 = "ABCDEFG"
+    string2 = "TUVWXYZ"
 
-    ## YOUR CODE HERE ##
+    print(string1)
+    print(string2)
 
     # PART B
     # ======
-    # Iterate through each character in string1 and print each character to a new
-    # line using print statements
-
-    ## YOUR CODE HERE ##
+    for character in string1:
+        print(character)
 
     # PART C
     # ======
-    # Iterate through each character in string1 and print each character to a new
-    # line using print statements
-
-    ## YOUR CODE HERE ##
+    for character in string2:
+        print(character)
 
     # PART D
     # ======
-    # Swap the odd characters in string1 with the odd characters in string2 and
-    # print string1 and string2 to the screen (using 2 print statements)
-    
-    ## YOUR CODE HERE ##
+    characters1 = list(string1)
+    characters2 = list(string2)
+
+    for index in range(1, len(string1), 2):
+        characters1[index], characters2[index] = (
+            characters2[index], characters1[index]
+        )
+
+    string1 = "".join(characters1)
+    string2 = "".join(characters2)
+
+    print(string1)
+    print(string2)
 
     # PART E
     # ======
-    # Combine the two strings into one variable called string3. For each character,
-    # if the value is a letter between A and M (inclusive), change the letter to the
-    # next letter to the right. If the value is a letter between N and Z (inclusive),
-    # change the value of the character to the letter to the left. Save to the
-    # string3 variable and print the value of that variable to the screen.
+    string3 = string1 + string2
+    shifted_string = ""
 
-    ## YOUR CODE HERE ##
+    for character in string3:
+        if "A" <= character <= "M":
+            shifted_string += chr(ord(character) + 1)
+        elif "N" <= character <= "Z":
+            shifted_string += chr(ord(character) - 1)
+        else:
+            shifted_string += character
+
+    string3 = shifted_string
+    print(string3)
 
     # PART F
     # ======
-    # Reverse the value of string3 and print it to the screen
-
-    ## YOUR CODE HERE ##
+    string3 = string3[::-1]
+    print(string3)
 
     return  # DO NOT EDIT THIS LINE
 
